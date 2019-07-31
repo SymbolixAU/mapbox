@@ -12,8 +12,7 @@ mapbox(data = NULL, token, width = NULL, height = NULL,
 \item{data}{data to be used on the map. All coordinates are expected to be in
 Web Mercator Projection}
 
-\item{token}{Mapbox Acess token. Use \code{set_token()} to set a global token.
-If left empty layers will still be plotted, but without a Mapbox map.}
+\item{token}{Mapbox Acess token.}
 
 \item{width}{the width of the map}
 
@@ -32,5 +31,5 @@ If left empty layers will still be plotted, but without a Mapbox map.}
 \item{location}{unnamed vector of lon and lat coordinates (in that order)}
 }
 \description{
-mapbox
+Plots a Mapbox GL JS map
 }
