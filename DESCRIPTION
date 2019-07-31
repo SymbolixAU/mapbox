@@ -1,0 +1,28 @@
+Package: mapbox
+Type: Package
+Title: Interactive Maps Using 'Mapbox GL JS'
+Version: 0.0.1
+Date: 2019-07-31
+Authors@R: c(
+    person("David", "Cooley", ,"dcooley@symbolix.com.au", role = c("aut", "cre"))
+    )
+Description: Provides a mechanism to plot an interactive map using 'Mapbox GL' 
+		(<https://www.mapbox.com/mapbox-gl-js/api/>), a javascript library for interactive maps.
+License: GPL-3
+BugReports: https://github.com/SymbolixAU/mapbox/issues
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.3.0)
+Imports:
+    htmltools,
+    htmlwidgets,
+    magrittr,
+    shiny
+RoxygenNote: 6.1.1
+Suggests: 
+    covr,
+    knitr,
+    rmarkdown,
+    sf,
+    testthat
+VignetteBuilder: knitr
