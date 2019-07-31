@@ -80,3 +80,30 @@ invoke_mapbox_remote = function(map, method, args = list()) {
   }
   map
 }
+
+# Evaluate list members that are formulae, using the map data as the environment
+# (if provided, otherwise the formula environment)
+evalFormula = function(list, data) {
+  evalAll = function(x) {
+    if (is.list(x)) {
+      structure(lapply(x, evalAll), class = class(x))
+    } else resolveFormula(x, data)
+  }
+  evalAll(list)
+}
+
+resolveFormula = function(f, data) {
+  if (!inherits(f, 'formula')) return(f)
+  if (length(f) != 2L) stop("Unexpected two-sided formula: ", deparse(f))
+
+  doResolveFormula(data, f)
+}
+
+doResolveFormula = function(data, f) {
+  UseMethod("doResolveFormula")
+}
+
+
+doResolveFormula.data.frame = function(data, f) {
+  eval(f[[2]], data, environment(f))
+}
