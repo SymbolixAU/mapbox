@@ -2,14 +2,14 @@
 % Please edit documentation in R/mapbox_map_utilities.R
 \name{mapbox_dispatch}
 \alias{mapbox_dispatch}
-\alias{invoke_mapbox_method}
+\alias{invoke_method}
 \title{mapbox dispatch}
 \usage{
 mapbox_dispatch(map, funcName, mapbox = stop(paste(funcName,
   "requires a map update object")), mapbox_update = stop(paste(funcName,
   "does not support map update objects")))
 
-invoke_mapbox_method(map, method, ...)
+invoke_method(map, method, ...)
 }
 \arguments{
 \item{map}{a map object, as returned from \code{\link{mapbox}}}
