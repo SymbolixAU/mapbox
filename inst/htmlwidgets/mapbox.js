@@ -46,19 +46,19 @@
   }
 });
 
-function add_mapbox_layer( map_id, layer_json ) {
+function mb_add_layer( map_id, layer_json ) {
   var map = window[ map_id + 'map'];
   var js = JSON.parse( layer_json );
     map.addLayer( js );
 }
 
-function add_mapbox_source( map_id, id, source_json ) {
+function mb_add_source( map_id, id, source_json ) {
 	var map = window[ map_id + 'map'];
   var js = JSON.parse( source_json );
 	map.addSource( id,  js );
 }
 
-function clear_mapbox_layer( map_id, layer ) {
+function mb_clear_layer( map_id, layer ) {
 		var map = window[ map_id + 'map'];
 		console.log( map );
 		if (map.hasLayer( layer ) ) {
@@ -66,7 +66,7 @@ function clear_mapbox_layer( map_id, layer ) {
 		}
 }
 
-function clear_mapbox_source( map_id, source ) {
+function mb_clear_source( map_id, source ) {
 	var map = window[ map_id + 'map'];
 		if (map.hasSource( source ) ) {
 			map.removeSource( source );
