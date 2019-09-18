@@ -5,8 +5,9 @@
 \title{mapbox}
 \usage{
 mapbox(data = NULL, token, width = NULL, height = NULL,
-  padding = 0, style = "mapbox://styles/mapbox/streets-v9",
-  pitch = 0, zoom = 0, bearing = 0, location = c(0, 0))
+  padding = 0, style = mapbox_style(), pitch = 0, zoom = 0,
+  bearing = 0, location = c(0, 0), options = list(),
+  control = NULL)
 }
 \arguments{
 \item{data}{data to be used on the map. All coordinates are expected to be in
@@ -20,7 +21,7 @@ Web Mercator Projection}
 
 \item{padding}{the padding of the map}
 
-\item{style}{the style of the map}
+\item{style}{the style of the map. See \code{\link{mapbox_style}}}
 
 \item{pitch}{the pitch angle of the map}
 
@@ -29,7 +30,53 @@ Web Mercator Projection}
 \item{bearing}{bearing of the map between 0 and 360}
 
 \item{location}{unnamed vector of lon and lat coordinates (in that order)}
+
+\item{options}{list of options (See the example and \href{https://docs.mapbox.com/mapbox-gl-js/api/#map}{Mapbox Map API})}
+
+\item{control}{list of optional controls. (See the example and \href{https://docs.mapbox.com/mapbox-gl-js/api/#user interface}{Mapbox User Interface API})}
 }
 \description{
 Plots a Mapbox GL JS map
+}
+\details{
+The \code{options} argument in the example contains 3 options, which are actually not options, but rather
+plugins or additional layers, which can be included.
+
+\itemize{
+  \item{buildings}
+  \item{hillshade}
+  \item{oceandepth}
+}
+
+The option \code{gamelikecontrols} only works when \code{interactive} is set to FALSE.
+}
+\examples{
+\dontrun{
+token <- "MAPBOX_TOKEN"
+
+mapbox(token = token, zoom = 10,
+       location = c(-74.5447, 40.6892),
+       style = mapbox_style(2),
+       control = list(FullscreenControl = TRUE,
+                      NavigationControl = TRUE,
+                      Geocoder = TRUE,
+                      GeolocateControl = TRUE,
+                      Directions = TRUE,
+                      ScaleControl = TRUE),
+       options = list(buildings = TRUE,
+                      hillshade = TRUE,
+                      oceandepth = TRUE,
+                      interactive = TRUE,
+                      gamelikecontrols = FALSE,
+                      attributionControl = TRUE,
+                      customAttribution = "Hello There",
+                      logoPosition = "top-left",
+                      dragPan = TRUE,
+                      scrollZoom = TRUE,
+                      maxZoom = 10,
+                      minZoom = 3,
+                      maxBounds = list(-75.9876, 40.7661, -73.9397, 41.8002),
+                      hash = TRUE))
+}
+
 }
