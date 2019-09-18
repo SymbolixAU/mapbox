@@ -26,14 +26,15 @@
 
         // TODO make this optional
         //map.addControl(new mapboxgl.NavigationControl());
+        window[el.id + 'map'] = map;
 
-        var checkExists = setInterval(function () {
-        	map.on('styledata', function() {
-        		clearInterval(checkExists);
-        		window[el.id + 'map'] = map;
-        		md_initialise_mapbox(el, x);
+        //var checkExists = setInterval(function () {
+        	map.on('load', function() {
+        	  console.log("map loaded");
+        		//clearInterval(checkExists);
+        		mb_initialise_mapbox(el, x);
         	});
-        }, 100);
+        //}, 100);
 
       },
 
@@ -119,7 +120,9 @@ if (HTMLWidgets.shinyMode) {
   });
 }
 
-function md_initialise_mapbox(el, x) {
+function mb_initialise_mapbox(el, x) {
+
+  console.log("mb_initialise_map");
 
 	// call initial layers
   if (x.calls !== undefined) {
