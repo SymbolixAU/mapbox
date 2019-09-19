@@ -1,9 +1,13 @@
 #' Add source
 #'
+#' @param map A map widget object
+#' @param id The source ID
+#' @param js The JSON used to create the source
+#'
 #' @details
 #'
 #' Mapbox sources supply data to be shown on the map. The type of source is specified
-#' by the "type" property, ans must be one of
+#' by the "type" property, and must be one of
 #' \itemize{
 #'   \item{vector}
 #'   \item{raster}
@@ -14,15 +18,6 @@
 #' }
 #'
 #' See the Mapbox Sources definition at \url{https://docs.mapbox.com/mapbox-gl-js/style-spec/#sources}
-#'
-#'
-#' @examples
-#' \donttest{
-#'
-#'
-#'
-#' }
-#'
 #'
 #' @export
 add_source <- function(map, id = NULL, js) {
@@ -37,6 +32,9 @@ add_source <- function(map, id = NULL, js) {
 }
 
 #' Add layer
+#'
+#' @param map A map widget object
+#' @param js The JSON used to create the layer
 #'
 #' @examples
 #' \donttest{
@@ -100,7 +98,11 @@ add_layer <- function(map, js) {
   )
 }
 
-
+#' Clear layer
+#'
+#' @param map A map widget object
+#' @param layer The layer to clear
+#'
 #' @export
 clear_layer <- function(map, layer ) {
   invoke_method(

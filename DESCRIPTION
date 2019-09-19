@@ -4,7 +4,8 @@ Title: Interactive Maps Using 'Mapbox GL JS'
 Version: 0.0.1
 Date: 2019-07-31
 Authors@R: c(
-    person("David", "Cooley", ,"dcooley@symbolix.com.au", role = c("aut", "cre"))
+    person("David", "Cooley", ,"dcooley@symbolix.com.au", role = c("aut", "cre")),
+    person("Sebastian", "Gatscha", email="sebastian_gatscha@gmx.at", role="ctb")
     )
 Description: Provides a mechanism to plot an interactive map using 'Mapbox GL JS' 
 		(<https://www.mapbox.com/mapbox-gl-js/api/>), a javascript library that uses

@@ -6,12 +6,19 @@
 \usage{
 add_source(map, id = NULL, js)
 }
+\arguments{
+\item{map}{A map widget object}
+
+\item{id}{The source ID}
+
+\item{js}{The JSON used to create the source}
+}
 \description{
 Add source
 }
 \details{
 Mapbox sources supply data to be shown on the map. The type of source is specified
-by the "type" property, ans must be one of
+by the "type" property, and must be one of
 \itemize{
   \item{vector}
   \item{raster}
@@ -22,13 +29,4 @@ by the "type" property, ans must be one of
 }
 
 See the Mapbox Sources definition at \url{https://docs.mapbox.com/mapbox-gl-js/style-spec/#sources}
-}
-\examples{
-\donttest{
-
-
-
-}
-
-
 }

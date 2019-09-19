@@ -6,6 +6,11 @@
 \usage{
 add_layer(map, js)
 }
+\arguments{
+\item{map}{A map widget object}
+
+\item{js}{The JSON used to create the layer}
+}
 \description{
 Add layer
 }
