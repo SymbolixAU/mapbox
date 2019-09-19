@@ -4,9 +4,9 @@
 \alias{\%>\%}
 \title{Pipe}
 \arguments{
-\item{lhs, rhs}{A mapdeck map and a layer to add to it}
+\item{lhs, rhs}{A mapbox map and a layer to add to it}
 }
 \description{
 Uses the pipe operator (\code{\%>\%}) to chain statements. Useful for adding
-layers to a \code{mapdeck} map
+layers to a \code{mapbox} map
 }

@@ -14,13 +14,13 @@
 #' or an error. \code{invokeMethod} returns the
 #' \code{map} object that was passed in, possibly modified.
 #'
-#' @export
 mapbox_dispatch = function(
   map,
   funcName,
   mapbox = stop(paste(funcName, "requires a map update object")),
   mapbox_update = stop(paste(funcName, "does not support map update objects"))
 ) {
+
   if (inherits(map, "mapbox"))
     return(mapbox)
   else if (inherits(map, "mapbox_update"))
@@ -32,8 +32,7 @@ mapbox_dispatch = function(
 #' @param method the name of the JavaScript method to invoke
 #' @param ... unnamed arguments to be passed to the JavaScript method
 #' @rdname mapbox_dispatch
-#' @export
-invoke_mapbox_method <- function(map, method, ...) {
+invoke_method <- function(map, method, ...) {
   args = evalFormula(list(...))
   mapbox_dispatch(
     map,
@@ -47,13 +46,13 @@ invoke_mapbox_method <- function(map, method, ...) {
       map
     },
     mapbox_update = {
-      invoke_mapbox_remote(map, method, args)
+      invoke_remote(map, method, args)
     }
   )
 }
 
 
-invoke_mapbox_remote = function(map, method, args = list()) {
+invoke_remote = function(map, method, args = list()) {
   if (!inherits(map, "mapbox_update"))
     stop("Invalid map parameter; mapbox_update object was expected")
 
