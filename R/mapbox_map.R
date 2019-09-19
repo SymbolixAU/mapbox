@@ -61,7 +61,7 @@
 #' @export
 mapbox <- function(
   data = NULL,
-  token,
+  token = get_access_token( api = 'mapbox' ),
   width = NULL,
   height = NULL,
   padding = 0,

@@ -55,7 +55,7 @@ mapbox(
   , zoom = 10
 ) \%>\%
   add_source(
-    id = 'contours'
+    id = id
     , js = source
   ) \%>\%
   add_layer(
