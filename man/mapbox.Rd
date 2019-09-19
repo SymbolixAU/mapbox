@@ -4,9 +4,10 @@
 \alias{mapbox}
 \title{mapbox}
 \usage{
-mapbox(data = NULL, token, width = NULL, height = NULL,
-  padding = 0, style = "mapbox://styles/mapbox/streets-v9",
-  pitch = 0, zoom = 0, bearing = 0, location = c(0, 0))
+mapbox(data = NULL, token = get_access_token(api = "mapbox"),
+  width = NULL, height = NULL, padding = 0,
+  style = "mapbox://styles/mapbox/streets-v9", pitch = 0, zoom = 0,
+  bearing = 0, location = c(0, 0))
 }
 \arguments{
 \item{data}{data to be used on the map. All coordinates are expected to be in
